@@ -57,4 +57,11 @@ public class EmployeeController {
         employeeDao.save(employee);
         return "redirect:/emps";
     }
+
+    @DeleteMapping("/emp/{id}")
+    public String deleteEmployee(@PathVariable("id") Integer id) {
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+
 }
